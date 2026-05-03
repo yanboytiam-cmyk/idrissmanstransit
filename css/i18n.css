@@ -1,0 +1,225 @@
+/* ═══════════════════════════════════════════════════════════
+   i18n.css — Sélecteur de langue + Support RTL
+   IdrisMans Transit
+═══════════════════════════════════════════════════════════ */
+
+/* ─── Sélecteur de langue ─── */
+.i18n-switcher {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin-right: 12px;
+  z-index: 1000;
+}
+
+.i18n-current {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-heading, #0f2a45);
+  transition: background 0.2s ease, border-color 0.2s ease;
+  min-height: 44px;
+  min-width: 44px;
+  font-family: inherit;
+  line-height: 1;
+}
+
+.i18n-current:hover {
+  background: rgba(0, 0, 0, 0.07);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.i18n-current:focus-visible {
+  outline: 2px solid var(--color-primary, #0066cc);
+  outline-offset: 2px;
+}
+
+.i18n-arrow {
+  font-size: 10px;
+  transition: transform 0.2s ease;
+}
+
+/* Dropdown ouvert → flèche retournée */
+.i18n-switcher:has(#i18nDropdown.open) .i18n-arrow {
+  transform: rotate(180deg);
+}
+
+.i18n-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.14);
+  list-style: none;
+  padding: 6px;
+  min-width: 158px;
+  z-index: 9999;
+  animation: i18nFadeIn 0.15s ease;
+}
+
+@keyframes i18nFadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.i18n-dropdown.open {
+  display: block;
+}
+
+.i18n-dropdown__item {
+  padding: 9px 14px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #1f2937;
+  transition: background 0.14s ease;
+  white-space: nowrap;
+  list-style: none;
+}
+
+.i18n-dropdown__item:hover {
+  background: #f3f4f6;
+}
+
+.i18n-dropdown__item.active {
+  background: #eff6ff;
+  font-weight: 700;
+  color: #1d4ed8;
+}
+
+/* ─── Dans une navbar sombre, adapter les couleurs ─── */
+.navbar .i18n-current,
+.topbar .i18n-current {
+  color: inherit;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ─── Responsive mobile ─── */
+@media (max-width: 768px) {
+  .i18n-switcher {
+    margin-right: 8px;
+  }
+  .i18n-current {
+    padding: 7px 10px;
+    font-size: 12px;
+  }
+  .i18n-dropdown {
+    right: 0;
+    min-width: 140px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SUPPORT RTL — Arabe
+═══════════════════════════════════════════════════════════ */
+
+[dir="rtl"] {
+  text-align: right;
+}
+
+/* Navbar / Header */
+[dir="rtl"] .navbar__inner,
+[dir="rtl"] .topbar__inner,
+[dir="rtl"] .footer__grid {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .navbar__nav {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .navbar__cta {
+  flex-direction: row-reverse;
+}
+
+/* Dropdown RTL */
+[dir="rtl"] .dropdown {
+  right: auto;
+  left: 0;
+}
+
+/* Sélecteur de langue en RTL */
+[dir="rtl"] .i18n-switcher {
+  margin-right: 0;
+  margin-left: 12px;
+}
+
+[dir="rtl"] .i18n-dropdown {
+  right: auto;
+  left: 0;
+}
+
+/* Listes et contenus */
+[dir="rtl"] .breadth-list,
+[dir="rtl"] .services-block__list,
+[dir="rtl"] .contact-requirements ul {
+  padding-left: 0;
+  padding-right: 1.25rem;
+}
+
+[dir="rtl"] .services-block__list li {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .contact-info-list a {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .footer__contacts a {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .welcome-split,
+[dir="rtl"] .breadth-split,
+[dir="rtl"] .philosophy-split {
+  direction: rtl;
+}
+
+[dir="rtl"] .hero__options {
+  flex-direction: row-reverse;
+}
+
+/* Marges inversées */
+[dir="rtl"] .ml-auto { margin-left: unset; margin-right: auto; }
+[dir="rtl"] .mr-auto { margin-right: unset; margin-left: auto; }
+
+/* Icônes Font Awesome avec texte */
+[dir="rtl"] .fa-phone,
+[dir="rtl"] .fa-envelope,
+[dir="rtl"] .fa-location-dot,
+[dir="rtl"] .fa-check {
+  margin-right: 0;
+  margin-left: 6px;
+}
+
+/* Bordure gauche → droite en RTL */
+[dir="rtl"] [style*="border-left"] {
+  border-left: none;
+  border-right: 3px solid var(--color-primary, #0066cc);
+}
+
+/* Typography arabe — police dédiée pour meilleure lisibilité */
+[lang="ar"],
+[dir="rtl"] {
+  font-family: 'Cairo', 'Noto Sans Arabic', 'Segoe UI', Tahoma, Arial, sans-serif;
+  line-height: 1.8;
+}
+
+/* Animation RTL */
+[dir="rtl"] [data-aos="fade-right"] {
+  transform: translateX(50px) !important;
+}
+
+[dir="rtl"] [data-aos="fade-left"] {
+  transform: translateX(-50px) !important;
+}

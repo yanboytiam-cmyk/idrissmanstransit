@@ -1,0 +1,162 @@
+<!--
+  navbar.html — IdrisMans Transit Clone
+  Snippet réutilisable : inclure dans chaque page HTML
+-->
+
+<header class="navbar" id="navbar">
+  <div class="container">
+    <div class="navbar__inner">
+
+      <!-- Logo -->
+      <a href="../index.html" class="navbar__logo">
+        <img src="../logo.png" alt="IdrisMans Transit" style="max-height: 80px; width: auto; object-fit: contain;">
+      </a>
+
+      <!-- Navigation principale -->
+      <nav class="navbar__nav" aria-label="Main navigation">
+
+        <!-- Home -->
+        <div class="nav-item">
+          <a href="../index.html" class="nav-link" data-i18n="nav.home">Home</a>
+        </div>
+
+        <!-- About Us -->
+        <div class="nav-item">
+          <a href="../pages/about.html" class="nav-link" data-i18n="nav.about">About Us</a>
+        </div>
+
+        <!-- Services dropdown -->
+        <div class="nav-item">
+          <a href="../pages/services.html" class="nav-link" aria-haspopup="true" aria-expanded="false" data-i18n="nav.services">
+Services
+<span class="arrow" aria-hidden="true">▾</span>
+          </a>
+          <div class="dropdown" role="menu">
+            <a href="../pages/freight-forwarder.html" class="dropdown-link" role="menuitem" data-i18n="nav.freight_forwarding">Freight Forwarding</a>
+            <a href="../pages/importing.html" class="dropdown-link" role="menuitem" data-i18n="nav.importing">Importation vers la France / UE</a>
+            <a href="../pages/exporting.html" class="dropdown-link" role="menuitem" data-i18n="nav.exporting">Exportation depuis la France / UE</a>
+            
+            <a href="../pages/customs.html" class="dropdown-link" role="menuitem" data-i18n="nav.customs">Custom Services &amp; Clearances</a>
+            <a href="../pages/warehousing.html" class="dropdown-link" role="menuitem" data-i18n="nav.warehousing">Warehousing &amp; Transport</a>
+            <a href="../pages/project-logistics.html" class="dropdown-link" role="menuitem" data-i18n="nav.project_logistics">Project Logistics &amp; Management</a>
+          </div>
+        </div>
+
+        <!-- What We Ship dropdown -->
+        <div class="nav-item">
+          <a href="../pages/what-we-ship.html" class="nav-link" aria-haspopup="true" aria-expanded="false">
+            What We Ship <span class="arrow" aria-hidden="true">▾</span>
+          </a>
+          <div class="dropdown" role="menu">
+            <a href="../pages/import-car.html" class="dropdown-link" role="menuitem" data-i18n="nav.vehicles">Vehicles</a>
+            <a href="../pages/import-boat.html" class="dropdown-link" role="menuitem" data-i18n="nav.boats">Boats</a>
+            <a href="../pages/import-motorcycle.html" class="dropdown-link" role="menuitem" data-i18n="nav.motorcycles">Motorcycles</a>
+            <a href="../pages/import-motorhome.html" class="dropdown-link" role="menuitem" data-i18n="nav.motorhomes">Motorhomes</a>
+            <a href="../pages/import-caravan.html" class="dropdown-link" role="menuitem" data-i18n="nav.caravans">Caravans</a>
+            <a href="../pages/import-machinery.html" class="dropdown-link" role="menuitem" data-i18n="nav.machinery">Machinery</a>
+          </div>
+        </div>
+
+        <!-- RoRo Schedule -->
+        
+
+        <!-- Gallery -->
+        <div class="nav-item">
+          <a href="../pages/gallery.html" class="nav-link" data-i18n="nav.gallery">Gallery</a>
+        </div>
+
+        <!-- Contact -->
+        <div class="nav-item">
+          <a href="../pages/contact.html" class="nav-link" data-i18n="nav.contact">Contact Us</a>
+        </div>
+
+      </nav>
+
+      <!-- Zone CTA (phone + quote) -->
+      <div class="navbar__cta">
+        <a href="tel:+33695724985" class="navbar__phone" aria-label="Call IdrisMans Transit">
+          <span class="label" data-i18n="nav.call_label">Nous appeler</span>
+          <span class="number">+33 6 95 72 49 85</span>
+        </a>
+        <a href="../pages/contact.html" class="btn btn--primary btn--sm" data-i18n="nav.quote">Demander un devis</a>
+      </div>
+
+      <!-- Burger menu (mobile) -->
+      <button class="navbar__burger" id="navBurger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <nav class="navbar__mobile" id="mobileMenu" aria-label="Mobile navigation">
+
+    <div class="mobile-nav-item">
+      <a href="../index.html" class="mobile-nav-link" data-i18n="nav.home">Home</a>
+    </div>
+
+    <div class="mobile-nav-item">
+      <a href="../pages/about.html" class="mobile-nav-link" data-i18n="nav.about">About Us</a>
+    </div>
+
+    <!-- Services mobile dropdown -->
+    <div class="mobile-nav-item">
+      <a href="#" class="mobile-nav-link mobile-toggle" data-target="mobileServices" aria-expanded="false" data-i18n="nav.services">
+Services
+<span class="chevron-toggle" aria-hidden="true">▾</span>
+      </a>
+      <div class="mobile-dropdown" id="mobileServices">
+        <a href="../pages/freight-forwarder.html" class="mobile-dropdown-link" data-i18n="nav.freight_forwarding">Freight Forwarding</a>
+        <a href="../pages/importing.html" class="mobile-dropdown-link" data-i18n="nav.importing">
+Importation vers la France / UE
+</a>
+        <a href="../pages/exporting.html" class="mobile-dropdown-link" data-i18n="nav.exporting">
+Exportation depuis la France / UE
+</a>
+        
+        <a href="../pages/customs.html" class="mobile-dropdown-link" data-i18n="nav.customs">Custom Services &amp; Clearances</a>
+        <a href="../pages/warehousing.html" class="mobile-dropdown-link" data-i18n="nav.warehousing">Warehousing &amp; Transport</a>
+        <a href="../pages/project-logistics.html" class="mobile-dropdown-link" data-i18n="nav.project_logistics">Project Logistics &amp; Management</a>
+      </div>
+    </div>
+
+    <!-- What We Ship mobile dropdown -->
+    <div class="mobile-nav-item">
+      <a href="#" class="mobile-nav-link mobile-toggle" data-target="mobileShip" aria-expanded="false">
+        What We Ship <span class="chevron-toggle" aria-hidden="true">▾</span>
+      </a>
+      <div class="mobile-dropdown" id="mobileShip">
+        <a href="../pages/import-car.html" class="mobile-dropdown-link" data-i18n="nav.vehicles">Vehicles</a>
+        <a href="../pages/import-boat.html" class="mobile-dropdown-link" data-i18n="nav.boats">Boats</a>
+        <a href="../pages/import-motorcycle.html" class="mobile-dropdown-link" data-i18n="nav.motorcycles">Motorcycles</a>
+        <a href="../pages/import-motorhome.html" class="mobile-dropdown-link" data-i18n="nav.motorhomes">Motorhomes</a>
+        <a href="../pages/import-caravan.html" class="mobile-dropdown-link" data-i18n="nav.caravans">Caravans</a>
+        <a href="../pages/import-machinery.html" class="mobile-dropdown-link" data-i18n="nav.machinery">Machinery</a>
+      </div>
+    </div>
+
+    
+
+    <div class="mobile-nav-item">
+      <a href="../pages/gallery.html" class="mobile-nav-link" data-i18n="nav.gallery">Gallery</a>
+    </div>
+
+    <div class="mobile-nav-item">
+      <a href="../pages/contact.html" class="mobile-nav-link" data-i18n="nav.contact">Contact Us</a>
+    </div>
+
+    <!-- CTA mobile -->
+    <div class="mobile-nav-cta">
+      <a href="tel:+33695724985" class="btn btn--outline" style="width:100%; text-align:center;">
+        📞 +33 6 95 72 49 85
+      </a>
+      <a href="../pages/contact.html" class="btn btn--primary" style="width:100%; text-align:center;" data-i18n="nav.quote">
+Demander un devis
+</a>
+    </div>
+
+  </nav>
+</header>

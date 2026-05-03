@@ -1,0 +1,115 @@
+/*
+ * variables.css — Willship International Clone
+ * Toutes les variables CSS globales : couleurs, typographies, espacements, ombres
+ * ⚠️ Couleurs estimées depuis l'analyse visuelle — vérifier avec DevTools sur le site original
+ */
+
+:root {
+  /* ─── Couleurs principales (extraites des screenshots) ─── */
+  --color-primary:        #e8481c;    /* Orange-rouge Willship — boutons CTA */
+  --color-primary-dark:   #c93c14;    /* Orange-rouge foncé — hover */
+  --color-primary-light:  #f05a2e;    /* Orange-rouge clair */
+  --color-secondary:      #22a95a;    /* Vert — bouton "Call an expert" */
+  --color-secondary-dark: #1a8a48;    /* Vert foncé — hover */
+
+  /* ─── Couleurs de fond ─── */
+  --color-bg:             #ffffff;    /* Fond principal */
+  --color-bg-alt:         #f4f6f8;    /* Fond alterné sections */
+  --color-bg-dark:        #0d1f35;    /* Fond dark — navbar, footer, sections sombres */
+  --color-bg-hero:        #0d1f35;    /* Fond hero */
+  --color-bg-topbar:      #0a1a2e;    /* Barre supérieure encore plus sombre */
+
+  /* ─── Couleurs de texte ─── */
+  --color-text:           #3d4a5c;    /* Texte principal */
+  --color-text-light:     #ffffff;    /* Texte sur fonds sombres */
+  --color-text-muted:     #6c7a89;    /* Texte secondaire */
+  --color-heading:        #0d1f35;    /* Titres principaux — dark navy */
+
+  /* ─── Bordures et séparateurs ─── */
+  --color-border:         #e0e4ea;    /* Bordure standard */
+  --color-border-light:   #f0f2f5;    /* Bordure légère */
+
+  /* ─── Overlay ─── */
+  --overlay-dark:         rgba(10, 25, 48, 0.75);   /* Overlay sur hero */
+  --overlay-blue:         rgba(13, 31, 53, 0.85);   /* Overlay sections sombres */
+
+  /* ─── Typographies ─── */
+  --font-heading:         'Montserrat', 'Arial', sans-serif;   /* ⚠️ À VÉRIFIER */
+  --font-body:            'Open Sans', 'Arial', sans-serif;    /* ⚠️ À VÉRIFIER */
+  --font-mono:            'Courier New', monospace;
+
+  /* ─── Tailles de police ─── */
+  --text-xs:    0.75rem;    /* 12px */
+  --text-sm:    0.875rem;   /* 14px */
+  --text-base:  1rem;       /* 16px */
+  --text-md:    1.125rem;   /* 18px */
+  --text-lg:    1.25rem;    /* 20px */
+  --text-xl:    1.5rem;     /* 24px */
+  --text-2xl:   1.875rem;   /* 30px */
+  --text-3xl:   2.25rem;    /* 36px */
+  --text-4xl:   3rem;       /* 48px */
+  --text-5xl:   3.75rem;    /* 60px */
+
+  /* ─── Line heights ─── */
+  --leading-tight:    1.25;
+  --leading-normal:   1.6;
+  --leading-relaxed:  1.75;
+
+  /* ─── Letter spacing ─── */
+  --tracking-tight:   -0.025em;
+  --tracking-normal:  0;
+  --tracking-wide:    0.05em;
+  --tracking-wider:   0.1em;
+  --tracking-widest:  0.2em;
+
+  /* ─── Espacements ─── */
+  --space-1:   0.25rem;    /* 4px */
+  --space-2:   0.5rem;     /* 8px */
+  --space-3:   0.75rem;    /* 12px */
+  --space-4:   1rem;       /* 16px */
+  --space-5:   1.25rem;    /* 20px */
+  --space-6:   1.5rem;     /* 24px */
+  --space-8:   2rem;       /* 32px */
+  --space-10:  2.5rem;     /* 40px */
+  --space-12:  3rem;       /* 48px */
+  --space-16:  4rem;       /* 64px */
+  --space-20:  5rem;       /* 80px */
+  --space-24:  6rem;       /* 96px */
+
+  /* ─── Conteneurs ─── */
+  --container-max:    1200px;
+  --container-wide:   1400px;
+  --container-narrow: 900px;
+
+  /* ─── Border radius ─── */
+  --radius-sm:   3px;
+  --radius-md:   6px;
+  --radius-lg:   10px;
+  --radius-xl:   16px;
+  --radius-full: 9999px;
+
+  /* ─── Ombres ─── */
+  --shadow-sm:   0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md:   0 4px 12px rgba(0, 0, 0, 0.12);
+  --shadow-lg:   0 8px 30px rgba(0, 0, 0, 0.16);
+  --shadow-xl:   0 20px 60px rgba(0, 0, 0, 0.2);
+  --shadow-card: 0 2px 12px rgba(26, 95, 158, 0.1);
+
+  /* ─── Transitions ─── */
+  --transition-fast:   0.15s ease;
+  --transition-base:   0.3s ease;
+  --transition-slow:   0.5s ease;
+
+  /* ─── Navbar ─── */
+  --navbar-height:       70px;
+  --navbar-height-sm:    56px;
+  --navbar-bg:           #0d1f35;    /* Dark navy */
+  --navbar-shadow:       0 2px 12px rgba(0, 0, 0, 0.3);
+  --topbar-height:       42px;
+
+  /* ─── z-index ─── */
+  --z-dropdown:  100;
+  --z-sticky:    200;
+  --z-modal:     300;
+  --z-overlay:   400;
+}

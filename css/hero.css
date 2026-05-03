@@ -1,0 +1,330 @@
+/*
+ * hero.css — Willship International Clone
+ * Section hero homepage : layout 2 colonnes Commercial / Automotive
+ */
+
+/* ─── Hero principal homepage ─── */
+
+.hero {
+  position: relative;
+  min-height: 620px;
+  background-color: var(--color-bg-hero);
+  background-image: linear-gradient(135deg, #0a1628 0%, #0f2a45 40%, #152e4d 60%, #0a1628 100%);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-16) 0;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--overlay-dark);
+  z-index: 0;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+/* ─── Headline hero ─── */
+
+.hero__headline {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: var(--space-12);
+  letter-spacing: 0.02em;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: var(--leading-normal);
+  font-style: italic;
+}
+
+/* ─── Scroll indicator ─── */
+
+.hero__scroll {
+  position: absolute;
+  bottom: var(--space-6);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  color: rgba(255, 255, 255, 0.5);
+  z-index: 1;
+}
+
+.hero__scroll-icon {
+  width: 28px;
+  height: 44px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 14px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 6px;
+}
+
+.hero__scroll-dot {
+  width: 4px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 2px;
+  animation: scrollBounce 2s ease infinite;
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50%       { transform: translateY(8px); opacity: 0.3; }
+}
+
+/* ─── Grille Commercial / Automotive ─── */
+
+.hero__options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Cartes hero : fond transparent — conforme au screenshot (pas de bordures ni background) */
+.hero__card {
+  padding: var(--space-10) var(--space-8);
+  text-align: center;
+  transition: all var(--transition-base);
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero__card .btn {
+  margin-top: auto;
+}
+
+.hero__card:last-child {
+  border-right: none;
+}
+
+.hero__card-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-4xl);
+  font-weight: 800;
+  color: var(--color-text-light);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  margin-bottom: var(--space-4);
+  line-height: 1;
+}
+
+.hero__card-text {
+  font-size: var(--text-base);
+  color: rgba(255, 255, 255, 0.85);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-8);
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Bouton hero Commercial — blanc outline */
+.btn--hero-commercial {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  padding: 0.85rem 3rem;
+  border-radius: 4px;
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--transition-base);
+  min-width: 200px;
+}
+.btn--hero-commercial:hover {
+  background: rgba(255,255,255,0.15);
+  color: white;
+}
+
+/* Bouton hero Automotive — orange-rouge plein */
+.btn--hero-automotive {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  padding: 0.85rem 3rem;
+  border-radius: 4px;
+  border: 2px solid var(--color-primary);
+  background: var(--color-primary);
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--transition-base);
+  min-width: 200px;
+}
+.btn--hero-automotive:hover {
+  background: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  color: white;
+}
+
+/* ─── Hero pages internes (banner générique) ─── */
+
+.page-hero {
+  position: relative;
+  min-height: 280px;
+  background-color: var(--color-bg-dark);
+  background-image: linear-gradient(135deg, #111e2e 0%, #1a3050 50%, #0d1b2a 100%);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-16) 0;
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--overlay-dark);
+  z-index: 0;
+}
+
+.page-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.page-hero__title {
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  color: var(--color-text-light);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  margin-bottom: var(--space-3);
+}
+
+.page-hero__subtitle {
+  font-size: var(--text-md);
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ─── Slogan client ─── */
+
+.hero__slogan {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(0.95rem, 2vw, 1.25rem);
+  font-style: italic;
+  font-weight: 300;
+  color: #f0c040;
+  letter-spacing: 0.1em;
+  margin-top: 1.5rem;
+  text-shadow: 0 2px 12px rgba(240, 192, 64, 0.35);
+}
+
+.hero__slogan::before,
+.hero__slogan::after {
+  content: '';
+  display: block;
+  width: 36px;
+  height: 1px;
+  background: #f0c040;
+  opacity: 0.6;
+}
+
+/* ─── Breadcrumb ─── */
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  justify-content: center;
+  margin-top: var(--space-4);
+}
+
+.breadcrumb__item {
+  font-size: var(--text-xs);
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.breadcrumb__item:hover {
+  color: var(--color-text-light);
+}
+
+.breadcrumb__sep {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: var(--text-xs);
+}
+
+/* ─── Responsive ─── */
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 480px;
+    padding: var(--space-12) 0;
+  }
+
+  .hero__headline {
+    font-size: var(--text-xl);
+  }
+
+  .hero__options {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .hero__card-title {
+    font-size: var(--text-3xl);
+  }
+
+  .page-hero__title {
+    font-size: var(--text-3xl);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 420px;
+  }
+
+  .hero__headline {
+    font-size: var(--text-lg);
+  }
+
+  .hero__card {
+    padding: var(--space-6);
+  }
+
+  .page-hero__title {
+    font-size: var(--text-2xl);
+  }
+}

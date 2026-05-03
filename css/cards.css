@@ -1,0 +1,373 @@
+/*
+ * cards.css — Willship International Clone
+ * Cards services, testimonials, awards, équipe
+ */
+
+/* ─── Card générique ─── */
+
+.card {
+  background: var(--color-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ─── Card service ─── */
+
+.service-card {
+  background: var(--color-bg);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+  height: 100%;
+  border: 1px solid var(--color-border-light);
+  border-top: 4px solid var(--color-primary);
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.service-card__icon {
+  width: 60px;
+  height: 60px;
+  background: var(--color-primary);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-5);
+  color: white;
+  font-size: 24px;
+}
+
+.service-card__title {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-heading);
+  margin-bottom: var(--space-4);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+.service-card__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.service-card__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  line-height: var(--leading-relaxed);
+}
+
+.service-card__list li::before {
+  content: '✓';
+  color: var(--color-primary);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ─── Card testimonial ─── */
+
+.testimonial-card {
+  background: var(--color-bg);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  border: 1px solid var(--color-border);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-card::before {
+  content: '"';
+  position: absolute;
+  top: var(--space-5);
+  left: var(--space-6);
+  font-size: 72px;
+  line-height: 1;
+  color: var(--color-primary);
+  opacity: 0.15;
+  font-family: Georgia, serif;
+}
+
+.testimonial-card__stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: var(--space-4);
+  color: #f5a623;
+  font-size: var(--text-sm);
+}
+
+.testimonial-card__text {
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text);
+  font-style: italic;
+  flex-grow: 1;
+  margin-bottom: var(--space-5);
+}
+
+.testimonial-card__author {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: auto;
+}
+
+.testimonial-card__avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  background: var(--color-bg-alt);
+}
+
+.testimonial-card__name {
+  font-weight: 700;
+  font-size: var(--text-sm);
+  color: var(--color-heading);
+}
+
+.testimonial-card__role {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+/* ─── Card award ─── */
+
+.award-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-6);
+  background: var(--color-bg);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border-light);
+  transition: all var(--transition-base);
+}
+
+.award-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.award-card__icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: var(--space-3);
+  object-fit: contain;
+}
+
+/* Icônes Font Awesome pour les awards (remplace les images emoji) */
+.award-card__icon-fa {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-3);
+  font-size: 28px;
+}
+.award-card__icon-fa--winner {
+  background: linear-gradient(135deg, #ffd700, #f5a623);
+  color: #5a4200;
+  box-shadow: 0 4px 12px rgba(245, 166, 35, 0.4);
+}
+.award-card__icon-fa--finalist {
+  background: linear-gradient(135deg, #d0d8e4, #b0beca);
+  color: #4a5568;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.award-card__badge {
+  display: inline-block;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-2);
+}
+
+.award-card__badge--winner {
+  background: #ffd700;
+  color: #5a4200;
+}
+
+.award-card__badge--finalist {
+  background: var(--color-bg-alt);
+  color: var(--color-text-muted);
+}
+
+.award-card__year {
+  font-size: var(--text-xs);
+  color: var(--color-primary);
+  font-weight: 700;
+  margin-bottom: var(--space-2);
+}
+
+.award-card__title {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-heading);
+  line-height: var(--leading-normal);
+}
+
+/* ─── Card team member ─── */
+
+.team-card {
+  background: var(--color-bg);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-base);
+  text-align: center;
+}
+
+.team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.team-card__img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.team-card__body {
+  padding: var(--space-5) var(--space-4);
+}
+
+.team-card__name {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-heading);
+  margin-bottom: var(--space-1);
+}
+
+.team-card__title {
+  font-size: var(--text-sm);
+  color: var(--color-primary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  margin-bottom: var(--space-3);
+}
+
+.team-card__bio {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+}
+
+/* ─── Card ship-type (What We Ship) ─── */
+
+.ship-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: var(--color-bg);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8) var(--space-6);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border-light);
+  transition: all var(--transition-base);
+  text-decoration: none;
+  color: inherit;
+}
+
+.ship-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-lg);
+}
+
+.ship-card__img {
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-5);
+}
+
+.ship-card__title {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-heading);
+  margin-bottom: var(--space-3);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+.ship-card__text {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-5);
+}
+
+/* ─── Grilles de cards ─── */
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-8);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-5);
+}
+
+.grid-6 {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--space-4);
+}
+
+@media (max-width: 1024px) {
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .grid-6 { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .grid-2 { grid-template-columns: 1fr; }
+  .grid-3 { grid-template-columns: 1fr; }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .grid-6 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .grid-4 { grid-template-columns: 1fr; }
+  .grid-6 { grid-template-columns: repeat(2, 1fr); }
+}

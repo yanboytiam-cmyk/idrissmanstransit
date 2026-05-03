@@ -1,0 +1,175 @@
+/*
+ * forms.css — Willship International Clone
+ * Formulaires de contact, champs, validation, messages erreur/succès
+ */
+
+/* ─── Wrapper formulaire ─── */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+/* ─── Groupe champ ─── */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+}
+
+/* ─── Label ─── */
+
+.form-label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-heading);
+  letter-spacing: var(--tracking-normal);
+}
+
+.form-label .required {
+  color: #e74c3c;
+  margin-left: 2px;
+}
+
+/* ─── Input / Textarea / Select ─── */
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: var(--text-base);
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  line-height: var(--leading-normal);
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.form-control::placeholder {
+  color: var(--color-text-muted);
+  opacity: 0.8;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(26, 95, 158, 0.12);
+}
+
+.form-control:hover:not(:focus) {
+  border-color: var(--color-primary-light);
+}
+
+/* ─── Textarea ─── */
+
+textarea.form-control {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* ─── Select ─── */
+
+select.form-control {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236c7a89' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 20px;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+/* ─── États validation ─── */
+
+.form-control.is-valid {
+  border-color: #27ae60;
+}
+
+.form-control.is-invalid {
+  border-color: #e74c3c;
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.12);
+}
+
+.form-feedback {
+  font-size: var(--text-xs);
+  margin-top: 4px;
+}
+
+.form-feedback--error {
+  color: #e74c3c;
+}
+
+.form-feedback--success {
+  color: #27ae60;
+}
+
+/* ─── Message de succès global ─── */
+
+.form-success-message {
+  display: none;
+  background: #d4edda;
+  border: 1px solid #c3e6cb;
+  border-radius: var(--radius-md);
+  padding: var(--space-5) var(--space-6);
+  color: #155724;
+  font-weight: 600;
+  text-align: center;
+}
+
+.form-success-message.visible {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+/* ─── Formulaire contact bicolonne ─── */
+
+.contact-form-wrapper {
+  background: var(--color-bg);
+  border-radius: var(--radius-lg);
+  padding: var(--space-10) var(--space-12);
+  box-shadow: var(--shadow-lg);
+}
+
+.contact-form-wrapper .form-title {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--color-heading);
+  margin-bottom: var(--space-2);
+  text-transform: uppercase;
+}
+
+.contact-form-wrapper .form-subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-8);
+}
+
+/* ─── Responsive ─── */
+
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form-wrapper {
+    padding: var(--space-8) var(--space-6);
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form-wrapper {
+    padding: var(--space-6) var(--space-4);
+  }
+}
